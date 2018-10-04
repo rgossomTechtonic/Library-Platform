@@ -13,17 +13,16 @@ Library.prototype.addBook = function(book){
   for(var index=0; index<this.bookShelf.length; index++) {
     if(this.bookShelf[index].title === book.title){
       return false;
-      //console.log(false);
     }
   }
   this.bookShelf.push(book);
   return true;
-  //console.log(true);
+
 };
                                                 //This give me the title so use it (just the title).
 Library.prototype.removeBookByTitle = function(title){
-// I have to remove a book from the book array by it's title find books
-//return true if the book was removed * false if no book matched
+// I have to remove a book from the book array by it's title to find books
+//return true if the book was removed and false if no book matched
 
 // This was put here for me to loop through
 
@@ -31,11 +30,10 @@ Library.prototype.removeBookByTitle = function(title){
    if(this.bookShelf[index].title === title){
      this.bookShelf.splice(index,1);
     return true;
-    //console.log(false);
   }
 }
 return false;
-//console.log(true);
+
 };
 
                                                 //This give me the author so use it and it should work fine for me.
@@ -52,18 +50,24 @@ for(var index = 1; index<this.bookShelf.length; index++) {
   //console.log(false);
 };
 
-                                             //This random book needs a book so use the book for everthing in the function
+                                             //This random book needs a book so use the book for everything in the function
 Library.prototype.getRandomBook = function(book){
 
-  for(var index = 1; index<this.bookShelf.length; index++) {
-    if(this.bookShelf[index].author === book){
-      this.bookShelf.math.random.floor(index);
-        return true;
-        //console.log(true);
-      }
-    }
-    return false;
-    //console.log(false);
+  // This loop has something to do with math.Random/you can use .floor to make the number a even number.
+  //return a random book object from an array. 1.) I need to find a book at random 2.) I need find a book and return it with a call 3)If I don't find a book I need to return null when you cant find one.
+  // for(var index = 1; index<this.bookShelf.length; index++) {
+  //   if(this.bookShelf[index].book === book){
+  //     this.bookShelf.Math.floor(Math.random(index)*book.length);
+  //       return true;
+  //       //console.log(true);
+  //     }
+  //   }
+  //   return false;
+  //   //console.log(false);
+
+    // var house = "book";
+     return [Math.floor(Math.random() * book.length)];
+
 };
 
 
