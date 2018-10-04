@@ -52,13 +52,21 @@ for(var index = 1; index<this.bookShelf.length; index++) {
   //console.log(false);
 };
 
-
+                                             //This random book needs a book so use the book for everthing in the function
 Library.prototype.getRandomBook = function(book){
 
-
-
-this.bookShelf.math.Random.floor();
+  for(var index = 1; index<this.bookShelf.length; index++) {
+    if(this.bookShelf[index].author === book){
+      this.bookShelf.math.random.floor(index);
+        return true;
+        //console.log(true);
+      }
+    }
+    return false;
+    //console.log(false);
 };
+
+
 
 //This is my EventListener this how the Dom listens for me to basically ask for something.
 document.addEventListener("DOMContentLoaded", function(e){
