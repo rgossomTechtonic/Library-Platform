@@ -61,25 +61,40 @@ for(var index = 1; index<this.bookShelf.length; index++) {
 
                                              //This random book needs a book so use the book for everything in the function. I might have to make a random object to get this to work.
 Library.prototype.getRandomBook = function(book){
-  var data = {}; // I just made a object with creations or something that can hold the data for the information I want to use.
-  data.authors = ["Jay-Z", "wow","Oprah Winfrey"]; //made key of authers and a array of values
-  data.titles =["Decoded","Journey to Beloved","kik"];
-  //made key of titles and a array of values
-  data.numPages =[336,434,500];
-  //made key of numPages and a array of values
-  data.pubDates =[2011,1998,2010];
 
-  function random (type){ //I've created a function that takes a argument of type.
-    //console.log("type", type);
-    var keyValue = data[type]; //I've passed the string into data as a key to capture the values. This becomes the array from data.
-    //console.log("keyValue", keyValue);
-    return keyValue[Math.floor(Math.random() * data[type].length)];
+  // ******** This is the old code that i cant get to work **************
+
+  // var data = {}; // I just made a object with creations or something that can hold the data for the information I want to use.
+  // data.authors = ["Jay-Z", "wow","Oprah Winfrey"]; //made key of authers and a array of values
+  // data.titles =["Decoded","Journey to Beloved","kik"];
+  // //made key of titles and a array of values
+  // data.numPages =[336,434,500];
+  // //made key of numPages and a array of values
+  // data.pubDates =[2011,1998,2010];
+  //
+  // function random (type){ //I've created a function that takes a argument of type.
+  //   //console.log("type", type);
+  //   var keyValue = data[type]; //I've passed the string into data as a key to capture the values. This becomes the array from data.
+  //   //console.log("keyValue", keyValue);
+  //   return keyValue[Math.floor(Math.random() * data[type].length)];
+  // }
+  //
+  // book.author = random("authors");
+  // book.title = random("titles");
+  // book.numPages = random("numPages");
+  // book.pubDates = random("pubDates");
+
+  //This is the random book that works for me from Ashley
+    if(this.bookShelf.length > 0) {
+      var randomIndex = Math.floor(Math.random() * this.bookShelf.length);
+      return this.bookShelf[randomIndex];
+    }
+    else {
+      return null;
   }
 
-  book.author = random("authors");
-  book.title = random("titles");
-  book.numPages = random("numPages");
-  book.pubDates = random("pubDates");
+
+
 
   // This loop has something to do with math.Random/you can use .floor to make the number a even number.
   //return a random book object from an array. 1.) I need to find a book at random 2.) I need to find a book and return it with a call 3)If I don't find a book I need to return null when you can't find one.
@@ -120,10 +135,10 @@ Library.prototype.getBookByTitle = function(title){
 
                                             //I have to use a book Array to make this work with the addbook function
 
-Library.prototype.addBooks = function(booksArray){
+Library.prototype.addBooks = function(bookArray){
   var addedBooks = 0;
-	for (var index = 0; index < booksArray.length; index++) {
-  	if (this.addBook(booksArray[index])){
+	for (var index = 0; index < bookArray.length; index++) {
+  	if (this.addBooks(booksArray[index])){
 			addedBooks ++;
 		}
   }
@@ -140,6 +155,10 @@ Library.prototype.getAuthors = function(authors){
  //********************** Question 9  *******************************
 
  Library.prototype.getRandomAuthorName = function(authors){
+   Library.prototype.getRandomAuthorName = function() {
+  var randomBook = this.getRandomBook();
+  return randomBook.author;
+};
 
 
  };
