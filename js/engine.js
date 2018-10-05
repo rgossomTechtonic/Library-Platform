@@ -99,14 +99,13 @@ Library.prototype.getRandomBook = function(book){
 Library.prototype.getBookByTitle = function(title){
 
   for(var index = 1; index<this.bookShelf.length; index++) {
-    if(this.bookShelf[index].author === author){
-      this.bookShelf.splice(index,2);
+    if(this.bookShelf[index].title === title){
+      this.bookShelf.push(this.bookshelf[i]);
         return true;
-        //console.log(true);
       }
     }
-    return false;
-    //console.log(false);
+    return foundBook;
+
   };
 
 //********************** Question 6  *******************************
@@ -117,9 +116,17 @@ Library.prototype.getBookByTitle = function(title){
  };
 
 //********************** Question 7  *******************************
+// This code was from ashley I just have to test it to make sure it all work right because I'm still learning.
 
-Library.prototype.addBooks = function(books){
+                                            //I have to use a book Array to make this work with the addbook function
 
+Library.prototype.addBooks = function(booksArray){
+  var addedBooks = 0;
+	for (var index = 0; index < booksArray.length; index++) {
+  	if (this.addBook(booksArray[index])){
+			addedBooks ++;
+		}
+  }
 
  };
 
