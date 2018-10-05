@@ -1,6 +1,8 @@
 function Library(){
  this.bookShelf = new Array();
 }
+
+// ************************ Question 1 ****************************
                                        //Book with all values gives me the whole book so use it
 Library.prototype.addBook = function(book){
   //check if book is already in my array (this.bookShelf)
@@ -19,6 +21,8 @@ Library.prototype.addBook = function(book){
   return true;
 
 };
+
+// ******************** Question 2 ************************************
                                                 //This give me the title so use it (just the title).
 Library.prototype.removeBookByTitle = function(title){
 // I have to remove a book from the book array by it's title to find books
@@ -36,6 +40,8 @@ return false;
 
 };
 
+// ******************** Question 3 ************************************
+
                                                 //This give me the author so use it and it should work fine for me.
 Library.prototype.removeBookByAuthor = function(author){
 
@@ -50,8 +56,30 @@ for(var index = 1; index<this.bookShelf.length; index++) {
   //console.log(false);
 };
 
-                                             //This random book needs a book so use the book for everything in the function
+
+// ******************** Question 4 ************************************
+
+                                             //This random book needs a book so use the book for everything in the function. I might have to make a random object to get this to work.
 Library.prototype.getRandomBook = function(book){
+  var data = {}; // I just made a object with creations or something that can hold the data for the information I want to use.
+  data.authors = ["Jay-Z", "wow","Oprah Winfrey"]; //made key of authers and a array of values
+  data.titles =["Decoded","Journey to Beloved","kik"];
+  //made key of titles and a array of values
+  data.numPages =[336,434,500];
+  //made key of numPages and a array of values
+  data.pubDates =[2011,1998,2010];
+
+  function random (type){ //I've created a function that takes a argument of type.
+    //console.log("type", type);
+    var keyValue = data[type]; //I've passed the string into data as a key to capture the values. This becomes the array from data.
+    //console.log("keyValue", keyValue);
+    return keyValue[Math.floor(Math.random() * data[type].length)];
+  }
+
+  book.author = random("authors");
+  book.title = random("titles");
+  book.numPages = random("numPages");
+  book.pubDates = random("pubDates");
 
   // This loop has something to do with math.Random/you can use .floor to make the number a even number.
   //return a random book object from an array. 1.) I need to find a book at random 2.) I need to find a book and return it with a call 3)If I don't find a book I need to return null when you can't find one.
@@ -64,11 +92,50 @@ Library.prototype.getRandomBook = function(book){
   //   }
   //   return false;
   //   //console.log(false);
-
-     returnMath.floor(Math.random() * this.bookShelf.length);
-
 };
 
+// ******************** Question 5 ************************************
+
+Library.prototype.getBookByTitle = function(title){
+
+  for(var index = 1; index<this.bookShelf.length; index++) {
+    if(this.bookShelf[index].author === author){
+      this.bookShelf.splice(index,2);
+        return true;
+        //console.log(true);
+      }
+    }
+    return false;
+    //console.log(false);
+  };
+
+//********************** Question 6  *******************************
+
+ Library.prototype.getBookByAuthor = function(authorName){
+
+
+ };
+
+//********************** Question 7  *******************************
+
+Library.prototype.addBooks = function(books){
+
+
+ };
+
+//********************** Question 8  *******************************
+
+Library.prototype.getAuthors = function(authors){
+
+
+ };
+
+ //********************** Question 9  *******************************
+
+ Library.prototype.getRandomAuthorName = function(authors){
+
+
+ };
 
 
 //This is my EventListener this how the Dom listens for me to basically ask for something.

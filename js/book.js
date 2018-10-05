@@ -1,4 +1,4 @@
-function Book(title, author, numPages, pubDate){
+function Book(title, author, numPages, pubDate){       //This is my objects
   this.title = title;
   this.author = author;
   this.numPages = numPages;
@@ -9,9 +9,12 @@ Book.prototype.editBook = function(oBook)
 {
 
 };
-// This is where all my books are stored! I have an object with properties and methods
+// This is where all my books are stored! I have an object with properties and method.
 
-var jay = new Book ("Decoded","Jay-z",336,2011);
+
+
+                //I have Properties here
+var jay = new Book ("Decoded","Jay-Z",336,2011);
 var iOprah = new Book ("Journey to Beloved","Oprah Winfrey",434,1998);
 var lol = new Book ("kik","wow",500,2010);
 
