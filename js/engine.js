@@ -54,7 +54,7 @@ for(var index = 1; index<this.bookShelf.length; index++) {
 Library.prototype.getRandomBook = function(book){
 
   // This loop has something to do with math.Random/you can use .floor to make the number a even number.
-  //return a random book object from an array. 1.) I need to find a book at random 2.) I need find a book and return it with a call 3)If I don't find a book I need to return null when you cant find one.
+  //return a random book object from an array. 1.) I need to find a book at random 2.) I need to find a book and return it with a call 3)If I don't find a book I need to return null when you can't find one.
   // for(var index = 1; index<this.bookShelf.length; index++) {
   //   if(this.bookShelf[index].book === book){
   //     this.bookShelf.Math.floor(Math.random(index)*book.length);
@@ -65,8 +65,7 @@ Library.prototype.getRandomBook = function(book){
   //   return false;
   //   //console.log(false);
 
-    // var house = "book";
-     return [Math.floor(Math.random() * book.length)];
+     returnMath.floor(Math.random() * this.bookShelf.length);
 
 };
 
