@@ -168,10 +168,17 @@ Library.prototype.getAuthors = function(authors){
 document.addEventListener("DOMContentLoaded", function(e){
   window.gLibrary = new Library();
 
-  gLibrary.addBook(jay);
-  gLibrary.addBook(iOprah);
-  gLibrary.addBook(lol);
-  gLibrary.removeBookByAuthor();
+  // This code with my book should be added in addEventListener that way I can test it.
+
+
+  window.book1 = new Book("Decoded", "Jay-Z", 336, 2011);
+  window.book2 = new Book("Journey to Beloved", "Oprah Winfrey", 434, 1998);
+  window.book3 = new Book("kik", "wow", 500, 2010);
+
+
+  gLibrary.addBook(book1);
+  gLibrary.addBook(book2);
+  gLibrary.addBook(book3);
 });
 
 
