@@ -45,15 +45,17 @@ return false;
                                                 //This give me the author so use it and it should work fine for me.
 Library.prototype.removeBookByAuthor = function(author){
 
-for(var index = 1; index<this.bookShelf.length; index++) {
-  if(this.bookShelf[index].author === author){
-    this.bookShelf.splice(index,2);
-      return true;
-      //console.log(true);
+  // I have to fix this code with index
+
+  var haveRemoved = false;
+  for(var index=0; index<this.bookShelf.length; index++) {
+    if(this.bookShelf[index].author === author){
+      this.bookShelf.splice(i,1);
+      index--;
+      haveRemoved = true;
     }
   }
-  return false;
-  //console.log(false);
+  return haveRemoved;
 };
 
 
@@ -111,15 +113,13 @@ Library.prototype.getRandomBook = function(book){
 
 // ******************** Question 5 ************************************
 
-Library.prototype.getBookByTitle = function(title){
+                                            // This is the title in the book so I have to use this value to make it work.
 
-  for(var index = 1; index<this.bookShelf.length; index++) {
-    if(this.bookShelf[index].title === title){
-      this.bookShelf.push(this.bookshelf[i]);
-        return true;
-      }
-    }
-    return foundBook;
+Library.prototype.getBookByTitle = function(title){
+                                                      // This Book refers to the book value.
+  var titleResults = this.bookShelf.filter(function(book) {
+    return book.title.indexOf(title) > -1;// helps looks for index of title in array === -1 if not found
+  });
 
   };
 
@@ -127,6 +127,9 @@ Library.prototype.getBookByTitle = function(title){
 
  Library.prototype.getBookByAuthor = function(authorName){
 
+   var authorResults = this.bookShelf.filter(function(book) {
+       return book.author.indexOf(authorName) > -1;//looks for index of title in array === -1 if not found
+     });
 
  };
 
