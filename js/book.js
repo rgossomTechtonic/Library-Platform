@@ -7,6 +7,11 @@ function Book(title, author, numPages, pubDate){       //This is my objects
 }
 Book.prototype.editBook = function(oBook)
 {
+  this.title = oBook.title;
+  this.author = oBook.author;
+  this.numPages = oBook.numPages;
+  this.pubDate = oBook.pubDate;
+return oBook;
 
 };
 // This is where all my books are stored! I have an object with properties and method.

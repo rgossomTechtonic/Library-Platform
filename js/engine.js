@@ -118,19 +118,21 @@ Library.prototype.getRandomBook = function(book){
 Library.prototype.getBookByTitle = function(title){
                                                       // This Book refers to the book value.
   var titleResults = this.bookShelf.filter(function(book) {
-    return book.title.indexOf(title) > -1;// helps looks for index of title in array === -1 if not found
+    return book.title.indexOf(title) > -1;// helps looks for indexof title in array === -1 if not found
   });
-
+  return titleResults;
   };
 
 //********************** Question 6  *******************************
 
- Library.prototype.getBookByAuthor = function(authorName){
+                                              // This is the author in the book so I have to use this value to make it work.
+
+ Library.prototype.getBookByAuthor = function(author){
 
    var authorResults = this.bookShelf.filter(function(book) {
-       return book.author.indexOf(authorName) > -1;//looks for index of title in array === -1 if not found
+       return book.author.indexOf(author) > -1;//helps looks for indexof title in array === -1 if not found
      });
-
+  return authorResults;
  };
 
 //********************** Question 7  *******************************
@@ -145,7 +147,7 @@ Library.prototype.addBooks = function(bookArray){
 			addedBooks ++;
 		}
   }
-
+ 
  };
 
 //********************** Question 8  *******************************
@@ -167,12 +169,11 @@ Library.prototype.getAuthors = function(authors){
  };
 
 
-//This is my EventListener this how the Dom listens for me to basically ask for something.
+//This is my EventListener this is how the Dom listens for me to basically ask for something.
 document.addEventListener("DOMContentLoaded", function(e){
   window.gLibrary = new Library();
 
   // This code with my book should be added in addEventListener that way I can test it.
-
 
   window.book1 = new Book("Decoded", "Jay-Z", 336, 2011);
   window.book2 = new Book("Journey to Beloved", "Oprah Winfrey", 434, 1998);
@@ -182,6 +183,9 @@ document.addEventListener("DOMContentLoaded", function(e){
   gLibrary.addBook(book1);
   gLibrary.addBook(book2);
   gLibrary.addBook(book3);
+  gLibrary.getRandomAuthorName();
+  gLibrary.getBookByAuthor();
+
 });
 
 
