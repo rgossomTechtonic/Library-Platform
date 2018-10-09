@@ -138,21 +138,32 @@ Library.prototype.getBookByTitle = function(title){
 //********************** Question 7  *******************************
 // This code was from ashley I just have to test it to make sure it all work right because I'm still learning.
 
+// This is what i need to use to est the code it needs to be an array with a fake name to work.
+
+// gLibrary.addBooks([{
+// title: "recoded",
+// author: "Jay-z",
+// numPages: 336,
+// pubDate: 2011
+// }]);
+
                                             //I have to use a book Array to make this work with the addbook function
 
 Library.prototype.addBooks = function(bookArray){
   var addedBooks = 0;
 	for (var index = 0; index < bookArray.length; index++) {
-  	if (this.addBooks(booksArray[index])){
+  	if (this.addBook(bookArray[index])){
 			addedBooks ++;
 		}
   }
- 
+  console.log(addedBooks + " books (bookArray) added");
+  return addedBooks;
  };
 
 //********************** Question 8  *******************************
 
 Library.prototype.getAuthors = function(authors){
+
 
 
  };
