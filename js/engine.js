@@ -163,8 +163,13 @@ Library.prototype.addBooks = function(bookArray){
 //********************** Question 8  *******************************
 
 Library.prototype.getAuthors = function(authors){
-
-
+  var listOfAuthors = this.bookShelf.map(function(book) {
+    return book.author;
+  });
+  var allAuthors = listOfAuthors.filter(function(author, i) {
+    return listOfAuthors.indexOf(author) >= i;
+  });
+return allAuthors;
 
  };
 
