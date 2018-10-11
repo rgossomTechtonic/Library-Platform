@@ -50,7 +50,7 @@ Library.prototype.removeBookByAuthor = function(author){
   var haveRemoved = false;
   for(var index=0; index<this.bookShelf.length; index++) {
     if(this.bookShelf[index].author === author){
-      this.bookShelf.splice(i,1);
+      this.bookShelf.splice(index,1);
       index--;
       haveRemoved = true;
     }
